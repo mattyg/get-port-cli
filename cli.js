@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import process from 'node:process';
 import meow from 'meow';
 import getPort from 'get-port';
 
@@ -36,5 +37,5 @@ const cli = meow(`
 		port: cli.input.map(port => Number.parseInt(port, 10)),
 	});
 
-	console.log(port);
+	process.stdout.write(`${port}`);
 })();
